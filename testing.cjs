@@ -1,12 +1,12 @@
 function capitalize(str) {
+    if (str === '') {
+      return str
+    }
     let uppercase = str[0].toUpperCase()
     let word = str.slice(1, str.length)
     let result = uppercase + word
     return result
 }
-
-let capitalizedWord = capitalize('chungus')
-console.log(capitalizedWord)
 
 function reverseString(str) {
     let splitString = str.split("")
@@ -14,9 +14,6 @@ function reverseString(str) {
     let jointString = reversed.join("")
     return jointString
 }
-
-let reversedString = reverseString('reversal')
-console.log(reversedString)
 
 function calculator(x, y) {
     const functions = {
@@ -35,12 +32,6 @@ function calculator(x, y) {
     }
     return functions
 }
-
-let calculate = calculator()
-let addResult = calculate.add(1, 2)
-console.log(addResult)
-let subtractResult = calculate.subtract(5, 4)
-console.log(subtractResult)
 
 function caesarCipher(string, num) {
   let str = string.toLowerCase();
@@ -77,10 +68,6 @@ function caesarCipher(string, num) {
   return finalResult;
 }
 
-
-let encryptResult = caesarCipher('XylOpHoNE', 6)
-console.log(encryptResult)
-
 function analyzeArray(array) {
     let sum = array.reduce((total, current) => total + current, 0);
     let average = sum / array.length;
@@ -100,6 +87,4 @@ function analyzeArray(array) {
     return resultObject;
 }
 
-let analyzedArray = analyzeArray([2, 6, 3, 9, 7])
-console.log(analyzedArray)
-
+module.exports = {capitalize, reverseString, calculator, caesarCipher, analyzeArray}
